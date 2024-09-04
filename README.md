@@ -1,1 +1,1 @@
-# intel-bootc
+# intel-instructlab
