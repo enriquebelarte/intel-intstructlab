@@ -22,7 +22,7 @@ COPY /instructlab/bin/debug-* ${VIRTUAL_ENV}/bin/
 
 # -mno-avx: work around a build problem with llama-cpp-python and gcc.
 # flash-attn is compiled from source, bitsandbytes has a manylinux wheel
-COPY requirements.txt requirements-hpu.txt /tmp
+COPY /instructlab/requirements.txt /instructlab/requirements-hpu.txt /tmp
 RUN sed 's/\[.*\]//' /tmp/requirements.txt >/tmp/constraints.txt && \
     export PIP_NO_CACHE_DIR=off; \
     ${VIRTUAL_ENV}/bin/pip install -U wheel pip && \
