@@ -17,8 +17,8 @@ RUN ${PYTHON} -m venv --upgrade-deps --system-site-packages ${VIRTUAL_ENV} && \
     mkdir ${VIRTUAL_ENV}/src && \
     find ${VIRTUAL_ENV} -name __pycache__ | xargs rm -rf
 
-COPY ./sitecustomize.py ${VIRTUAL_ENV}/lib/${PYTHON}/site-packages/
-COPY ./bin/debug-* ${VIRTUAL_ENV}/bin/
+COPY /instructlab/sitecustomize.py ${VIRTUAL_ENV}/lib/${PYTHON}/site-packages/
+COPY /instructlab/bin/debug-* ${VIRTUAL_ENV}/bin/
 
 # -mno-avx: work around a build problem with llama-cpp-python and gcc.
 # flash-attn is compiled from source, bitsandbytes has a manylinux wheel
